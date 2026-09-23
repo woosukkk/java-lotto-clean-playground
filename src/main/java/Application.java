@@ -14,13 +14,13 @@ public class Application {
         PurchaseAmount purchaseAmount = new PurchaseAmount(InputView.readPrice(sc));
         LottoMachine lottoMachine = new LottoMachine();
 
-        List<Lotto> lottoList= lottoMachine.purchase(purchaseAmount.getLottosCount());
-        Lottos lottos=new Lottos(lottoList);
+        List<Lotto> lottoList = lottoMachine.purchase(purchaseAmount.getLottosCount());
+        Lottos lottos = new Lottos(lottoList);
 
         ResultView.printLottoResult(lottoList);
 
-        Lotto winnerNumbers = new Lotto(InputView.readWinnerNumber(sc)) ;
-        List<Integer> matchCount= lottos.getMatchCount(winnerNumbers.getNumbers());
+        Lotto winnerNumbers = new Lotto(InputView.readWinnerNumber(sc));
+        List<Integer> matchCount = lottos.getMatchCount(winnerNumbers.getNumbers());
 
         ResultView.printStats(matchCount, purchaseAmount.getLottosCount());
     }

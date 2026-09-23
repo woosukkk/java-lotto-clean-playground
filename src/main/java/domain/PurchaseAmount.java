@@ -16,7 +16,8 @@ public class PurchaseAmount {
         }
 
         if (amount % LOTTO_PRICE != 0) {
-            throw new IllegalArgumentException("[ERROR] 구입 금액은 " + LOTTO_PRICE + "원 단위로 입력해야 합니다. (입력값: " + amount + "원)");
+            throw new IllegalArgumentException(
+                    "[ERROR] 구입 금액은 " + LOTTO_PRICE + "원 단위로 입력해야 합니다. (입력값: " + amount + "원)");
         }
     }
 
@@ -28,7 +29,7 @@ public class PurchaseAmount {
         return amount;
     }
 
-    public int getLottosCount(){
-        return amount/LOTTO_PRICE;
+    public int getLottosCount() {
+        return amount / LOTTO_PRICE;
     }
 }

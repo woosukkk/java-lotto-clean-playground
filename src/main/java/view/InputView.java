@@ -25,6 +25,7 @@ public class InputView {
                 .toList();
 
     }
+
     private static int parseNumber(String value) {
         try {
             return Integer.parseInt(value);
