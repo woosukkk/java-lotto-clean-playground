@@ -17,14 +17,10 @@ public class Lottos {
         List<Integer> matchCount = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0));
 
         for (Lotto lotto : lottos) {
-            int count = 0;
+            List<Integer> copy = new ArrayList<>(lotto.getNumbers());
+            copy.retainAll(winnerLotto);
 
-            for (int num : lotto.getNumbers()) {
-                if (winnerLotto.contains(num)) {
-                    count++;
-                }
-            }
-
+            int count = copy.size();
             matchCount.set(count, matchCount.get(count) + 1);
         }
 
